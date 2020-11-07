@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <!-- Database connection settings -->
+        <property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+        <property name="connection.url">jdbc:mysql://localhost:3306/mycinema?characterEncoding=UTF-8&amp;serverTimezone=UTC</property>
+        <property name="connection.username">root</property>
+        <property name="connection.password"></property>
+        <!-- dialect 方言:oracle,sqlServer,mysql           hql  sql-->
+        <property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+        <!-- 控制台输出sql语句 -->
+        <property name="show_sql">true</property>
+        <!-- 格式化sql语句 -->
+        <property name="format_sql">true</property>
+        <!-- 是否在 SQL 语句中输出便于调试的注释信息。该属性只有当 show_sql 属性值为 true 时才有效。建议在程序调试后将其删除。-->
+        <property name="use_sql_comments">false</property>
+        <!-- 实体映射配置: -->
+        <mapping resource="hbm/Category.hbm.xml"/>
+    </session-factory>
+</hibernate-configuration>
